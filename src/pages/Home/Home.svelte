@@ -1,3 +1,3 @@
 <script ></script>
 
-<h1>Home page</h1>
+<h1>This is the Home page</h1>
