@@ -13,8 +13,14 @@
      */
     "allowJs": true,
     "checkJs": true,
+    "composite": true,
     "isolatedModules": true,
     "moduleDetection": "force",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@pages/*": ["./src/pages/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }
