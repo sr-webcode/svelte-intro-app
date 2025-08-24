@@ -1,4 +1,5 @@
 <script lang="ts">
+  type MovieInfo = { title: string; year: number };
   let count: number = $state(0);
   const { children } = $props();
   let firstName: string = $state('');
@@ -18,31 +19,36 @@
   const fullName = $derived(`${firstName} ${secondName}`);
 </script>
 
+{#snippet MovieData({ title, year }: MovieInfo)}
+  {#if title.toLowerCase().includes('the')}
+    <li>Title: LOL ITS THE!!! {title} from year of {year}</li>
+  {:else}
+    <li>Title: {title} from year of {year}</li>
+  {/if}
+{/snippet}
+
 <main>
   <!-- <h4>{count}</h4>
     <button onclick={increment}>increment</button>
     <button onclick={decrement}>decrement</button>
     <button onclick={reset}>reset</button> -->
-  <br />
-  <h4>the name is: {fullName}</h4>
+  <!-- <br /> -->
+  <!-- <h4>the name is: {fullName}</h4>
   <input type="text" placeholder="Enter First Name" bind:value={firstName} />
   <input type="text" placeholder="Enter Second Name" bind:value={secondName} />
-  {@render children()}
-
+  {@render children()} -->
   <!-- <ul>
     {#each carNames as carName}
           <li>{@html carName}</li>
     {/each}
   </ul>
    -->
-
   <ul>
-    {#each movies as { title, year }}
-      {#if title.toLowerCase().includes('the')}
-        <li>Title: LOL ITS THE!!! {title} from year of {year}</li>
-      {:else}
-      <li>Title: {title} from year of {year}</li>
-      {/if}
+    {#each movies as movie}
+      {@render MovieData(movie)}
     {/each}
   </ul>
+  {#if true}
+    <!-- component here but resides locally on this file scope -->
+  {/if}
 </main>
