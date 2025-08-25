@@ -5,12 +5,12 @@
 
 <a
   href="#"
-  class="card preset-filled-surface-100-900 border-[1px] border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden"
+  class="card preset-filled-surface-300-700 border-[1px] border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden"
 >
   <header>
     <img
       src={imgSrc}
-      class="aspect-[21/9] w-full grayscale hue-rotate-90"
+      class="w-full"
       alt="banner"
     />
   </header>
@@ -19,7 +19,7 @@
       <h2 class="h6">Announcements</h2>
       <h3 class="h3">Skeleton is Awesome</h3>
     </div>
-    <p class="opacity-60">
+    <p class="opacity-60 text-base">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
       aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi
       sapiente. Iste beatae laboriosam iure molestias cum expedita architecto

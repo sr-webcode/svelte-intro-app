@@ -2,13 +2,13 @@
   import './App.css';
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import {
-    route,
     Router,
     Query,
     type RouteConfig,
   } from '@mateothegreat/svelte5-router';
   import { Navigation } from '@skeletonlabs/skeleton-svelte';
   import { HouseIcon, Lamp, Package } from '@lucide/svelte';
+  import LightSwitch from './components/LightSwitch.svelte';
 
   const client = new QueryClient();
   const routes: RouteConfig[] = [
@@ -25,9 +25,10 @@
   const query = new Query();
 </script>
 
+<LightSwitch />
 <QueryClientProvider {client}>
   <div
-    class="card max-w-100 bg-primary-contrast-50 grid grid-cols-3 gap-5 m-5 p-2"
+    class="card bg-primary-200-800 max-w-60 mx-auto grid grid-cols-3 gap-5 m-5 p-2"
   >
     <Navigation.Tile id="0" label="Button" onclick={() => query.goto('/')}>
       <HouseIcon />
