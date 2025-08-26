@@ -1,25 +1,20 @@
 <script>
   const imgSrc =
     'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=450&h=190&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    import { ArrowRight as IconArrowRight } from '@lucide/svelte';
 </script>
 
-<a
-  href="#"
-  class="card preset-filled-surface-300-700 border-[1px] border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden"
+<div
+  class=""
 >
   <header>
-    <img
-      src={imgSrc}
-      class="w-full"
-      alt="banner"
-    />
+    <img src={imgSrc} class="w-full" alt="banner" />
   </header>
   <article class="space-y-4 p-4">
     <div>
       <h2 class="h6">Announcements</h2>
-      <h3 class="h3">Skeleton is Awesome</h3>
     </div>
-    <p class="opacity-60 text-base">
+    <p class="opacity-60">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
       aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi
       sapiente. Iste beatae laboriosam iure molestias cum expedita architecto
@@ -30,4 +25,14 @@
     <small class="opacity-60">By Alex</small>
     <small class="opacity-60">On {new Date().toLocaleDateString()}</small>
   </footer>
-</a>
+</div>
+
+
+<div class="flex items-center gap-4">
+  <button type="button" class="btn-icon preset-filled" title="Go" aria-label="Go"><IconArrowRight size={18} /></button>
+  <button type="button" class="btn bg-error-900">Button</button>
+  <button type="button" class="btn preset-filled">
+    <span>Button</span>
+    <IconArrowRight size={18} />
+  </button>
+</div>
