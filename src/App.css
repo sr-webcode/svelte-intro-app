@@ -3,11 +3,21 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-active-link: #3D99F5;
+  --color-brand-primary:#3d99f5; 
+  --color-brand-secondary:#F0F2F5; 
+  --color-foreground-primary: #121417;
 }
 
 @source "../node_modules/flowbite-svelte/dist";
 @source "../node_modules/flowbite-svelte-icons/dist";
+
+body{
+  color: var(--color-foreground-primary);
+}
+
+button {
+  cursor: pointer;
+}
 
 @layer base {
   h1,

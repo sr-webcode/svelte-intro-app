@@ -15,7 +15,7 @@
     "checkJs": true,
     "composite": true,
     "isolatedModules": true,
-    "moduleDetection": "auto",
+    "moduleDetection": "force",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
