@@ -1,9 +1,9 @@
-<script >
+<script lang="ts" module>
   import PageWrapper from "@/components/PageWrapper.svelte";
 
 </script>
 
 <PageWrapper>
+    <h1>This is the categories page</h1>  
 
-    <h1>This is the about page</h1>
 </PageWrapper>

@@ -6,7 +6,6 @@
     Query,
     type RouteConfig,
   } from '@mateothegreat/svelte5-router';
-  import { HouseIcon, Lamp, Package } from '@lucide/svelte';
 
   const client = new QueryClient();
   const routes: RouteConfig[] = [
@@ -17,28 +16,15 @@
       path: 'about',
       component: async () => import('@/pages/About/About.svelte'),
     },
-    { path: 'blog', component: async () => import('@/pages/Blog/Blog.svelte') },
+    {
+      path: 'categories',
+      component: async () => import('@/pages/Categories/Categories.svelte'),
+    },
   ];
 
   const query = new Query();
 </script>
 
 <QueryClientProvider {client}>
-  <div
-    class="card bg-primary-200-800 max-w-60 mx-auto grid grid-cols-3 gap-5 m-5 p-2"
-  >
-    <!-- <Navigation.Tile id="0" label="Button" onclick={() => query.goto('/')}>
-      <HouseIcon />
-    </Navigation.Tile>
-    <Navigation.Tile id="0" label="About" onclick={() => query.goto('/about')}>
-      <Lamp />
-    </Navigation.Tile>
-    <Navigation.Tile label="Blog" onclick={() => query.goto('/blog')}>
-      <Package />
-    </Navigation.Tile> -->
-  </div>
-
-  <div class="p-5">
-    <Router {routes} />
-  </div>
+  <Router {routes} />
 </QueryClientProvider>
