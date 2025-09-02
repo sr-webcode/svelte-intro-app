@@ -6,8 +6,8 @@
     NavBrand,
     NavHamburger,
   } from 'flowbite-svelte';
-  import BrainOutline from 'flowbite-svelte-icons/BrainOutline.svelte';
-
+  import BrainOutlined from '@lucide/svelte/icons/brain'
+  
   import { fade } from 'svelte/transition';
   import { goto } from '@mateothegreat/svelte5-router';
   import type { MouseEventHandler } from 'svelte/elements';
@@ -48,7 +48,7 @@
     onclick={handleGoto}
     class="flex space-x-2.5"
   >
-    <BrainOutline class="shrink-0 h-6 w-6" />
+    <BrainOutlined class="shrink-0 h-6 w-6" />
     <h1 class="text-xl font-bold">QuizTime</h1>
   </NavBrand>
   <NavHamburger />

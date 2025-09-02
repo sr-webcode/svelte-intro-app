@@ -34,7 +34,7 @@
 {/snippet}
 
 <PageWrapper>
-  <h1 class="text-3xl font-bold mb-5">About Us</h1>
+  <h1 class="text-3xl font-bold mb-12">About Us</h1>
   <div class="flex flex-col space-y-4">
     {#each ABOUT_DETAIL_LIST as detail}
       <div class="flex flex-col space-y-2">
