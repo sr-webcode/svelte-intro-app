@@ -2,7 +2,7 @@
   import PageWrapper from '@/components/PageWrapper.svelte';
   import { createQuery } from '@tanstack/svelte-query';
   import { Spinner } from 'flowbite-svelte';
-  import { type Category, fetchCategories } from './service';
+  import { type Category, fetchCategories } from './services';
   import { CATEGORY_IMAGES, type CategoryImage } from './constant';
 
   const query = createQuery({

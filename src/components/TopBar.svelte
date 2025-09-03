@@ -6,8 +6,8 @@
     NavBrand,
     NavHamburger,
   } from 'flowbite-svelte';
-  import BrainOutlined from '@lucide/svelte/icons/brain'
-  
+  import BrainOutlined from '@lucide/svelte/icons/brain';
+
   import { fade } from 'svelte/transition';
   import { goto } from '@mateothegreat/svelte5-router';
   import type { MouseEventHandler } from 'svelte/elements';
@@ -28,7 +28,8 @@
     return current === navPath ? 'bg-brand-primary text-white' : '';
   };
 
-  const HOME_PATH = ROUTE_PATHS[0].path;
+  const navBarPaths = ROUTE_PATHS.slice(0, 3);
+  const HOME_PATH = navBarPaths[0].path;
 </script>
 
 {#snippet navItem({ label, path }: Omit<RouteNavDetail, 'id'>)}
@@ -57,7 +58,7 @@
     transitionParams={{ duration: 200 }}
     classes={{ ul: 'p-0 md:space-x-[36px] max-md:p-4 max-md:space-y-2' }}
   >
-    {#each ROUTE_PATHS as { label, path }}
+    {#each navBarPaths as { label, path }}
       {@render navItem({
         label,
         path,

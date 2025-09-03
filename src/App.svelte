@@ -3,7 +3,9 @@
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import { Router, type RouteConfig } from '@mateothegreat/svelte5-router';
 
-  const client = new QueryClient();
+  const client = new QueryClient({
+    defaultOptions: { queries: { refetchOnWindowFocus: false } },
+  });
   const routes: RouteConfig[] = [
     {
       component: async () => import('@/pages/Home/Home.svelte'),
@@ -15,6 +17,10 @@
     {
       path: 'categories',
       component: async () => import('@/pages/Categories/Categories.svelte'),
+    },
+    {
+      path: 'quiz',
+      component: async () => import('@/pages/Quiz/Quiz.svelte'),
     },
   ];
 </script>

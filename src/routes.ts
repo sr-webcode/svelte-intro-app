@@ -1,14 +1,19 @@
 export type RouteNavDetail = {
   id: string;
-  label: string;
+  label?: string;
   path: string;
 };
 
-export const HOME_PATH_ID = 'home' as const;
-export const CATEGORY_PATH_ID = 'categories' as const;
-export const ABOUT_PATH_ID = 'aboutUs' as const;
+export const HOME_ROUTE_ID = 'home' as const;
+export const CATEGORY_ROUTE_ID = 'categories' as const;
+export const ABOUT_ROUTE_ID = 'aboutUs' as const;
+export const QUIZ_ROUTE_ID = 'quiz' as const;
 
-type ROUTE_PATH_ID = 'home' | 'categories' | 'aboutUs';
+type ROUTE_PATH_ID =
+  | typeof HOME_ROUTE_ID
+  | typeof CATEGORY_ROUTE_ID
+  | typeof ABOUT_ROUTE_ID
+  | typeof QUIZ_ROUTE_ID;
 
 export const ROUTE_PATHS: RouteNavDetail[] = [
   {
@@ -26,10 +31,15 @@ export const ROUTE_PATHS: RouteNavDetail[] = [
     label: 'About Us',
     path: '/about',
   },
+  {
+    id: 'quiz',
+    path: '/quiz',
+  },
 ];
 
-export const getRoutePath = (pathID: ROUTE_PATH_ID): string => {
+export const getRoutePath = (routeID: ROUTE_PATH_ID): string => {
   const matchPath =
-    ROUTE_PATHS.find((p) => p.id === pathID)?.path ?? ROUTE_PATHS[0].path;
+    ROUTE_PATHS.find((p) => p.id === routeID)?.path ?? ROUTE_PATHS[0].path;
+
   return matchPath;
 };
